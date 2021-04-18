@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q4</title>
+</head>
+
+<body>
+    <script>
+
+        function Name(fname, lname) {
+            this.fname = fname;
+            this.lname = lname;
+            this.getFullName = () => `${this.fname} ${this.lname}`;
+        }
+
+        let myName = new Name("kiran", "raj")
+        console.log(myName.getFullName());
+
+        let { getFullName } = myName;
+        console.log(getFullName());
+
+        let broName = new Name("Vishnu", "R")
+        console.log(broName.getFullName());
+
+        // Line21 : kiran raj 
+        // Line24 : kiran raj
+        // Line27 : Vishnu R
+
+    </script>
+</body>
+
+</html>

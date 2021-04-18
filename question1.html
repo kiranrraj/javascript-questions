@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q1</title>
+</head>
+<body>
+    <script>
+        //Lets look at the NaN data type in Javascript
+
+        console.log(typeof NaN);            // number  Really???
+
+        console.log(undefined + undefined); // NaN
+
+        console.log(Math.sqrt("hello"));    // NaN
+
+        console.log(7 * undefined);         // NaN
+
+        console.log(7 * NaN);               // NaN
+
+        console.log(0 * Infinity);          // NaN
+
+        console.log(Number({a:10}));        // NaN
+
+        console.log("kiran" - 10);          // NaN
+
+        console.log("kiran" / 12);          // NaN
+
+        console.log("kiran" * 1);           // NaN
+
+        //Whatever we compare with NaN we always get "false", even with the NaN itself
+
+        console.log(NaN == NaN);            // false
+        console.log(NaN === NaN);           // false
+
+        console.log(Number.NaN === NaN);    // false
+
+        console.log(isNaN(NaN));            // true
+
+        console.log(isNaN(Number.NaN));     // true
+
+        console.log(Number.isNaN(NaN));     // true
+
+        // So we understand some NaN comparison, let's look another example
+
+        let name = "kiran";
+        console.log(isNaN(name));           // true
+        console.log(Number.isNaN(name));    // false
+
+        // So what happened here?
+        // isNaN() will return true if the value of the variable is currently NaN,
+        // or if the varible will be NaN if we try to convert it into Number.
+
+        // But Number.isNaN() will be true only if the varible has a value of NaN when it 
+        // is evaluated.
+        
+        let arr = [1,2,3,4, NaN, 6,7];
+        console.log(arr.length);            // 7
+        console.log(arr[4]);                // NaN
+        console.log(arr.indexOf(4));        // 3
+        console.log(arr.indexOf(NaN));      // -1 (Not found!!)
+
+        let index = arr.findIndex(n=> Number.isNaN(n));
+        console.log(index);                 // 4
+    </script>
+</body>
+</html>

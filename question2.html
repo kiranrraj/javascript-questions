@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q2</title>
+</head>
+<body>
+    <script>
+        // Undefined
+        // var undefined = 20;
+        // console.log(undefined);     // undefined
+
+        // Variable that is not initialized
+        let x;
+        console.log(typeof x);          // undefined
+        console.log(x);                 // undefined
+
+
+        // Accessing out of bound index of an array
+        let arr = [1,2,33];
+        console.log(arr[100]);          //undefined
+
+
+        // Accessing a non existing object property
+        var y = {name: "kiran"};
+        console.log(y.age);             // undefined 
+
+
+        // Function that does not return
+        let ret = function(a,b){
+            console.log(a+b)            // 30
+        };
+        console.log(ret(10, 20));       // undefined
+
+
+        // function paramaeters are undefined by default
+        let a;
+        function checkUndefined(x){
+            if (x === undefined){
+                console.log(`undefined`);
+            }else{
+                console.log(x);
+            }
+        }
+        checkUndefined();               // undefined
+        checkUndefined(a);              // undefined
+
+
+        let z = undefined;
+        console.log(z);                 // undefined 
+        console.log(typeof undefined);  // undefined 
+        console.log(typeof z === "undefined"); //true
+
+        let obj = {
+            fname : "kiran"
+        }
+
+        let lname = obj.lname ?? "raj";
+        let fname = obj.fname ?? "manu";
+        console.log(lname);                 // raj
+        console.log(fname);                 // kiran
+
+        let a1 = void 10
+        console.log(a1);                //undefined
+        let a2 = void arr[1,2,3]
+        console.log(a2);                //undefined
+        let a3 = void {name: "kiran"}
+        console.log(a3);                //undefined
+        let a4 = void (10 + 20);
+        console.log(a4);                //undefined
+
+
+    </script>
+</body>
+</html>

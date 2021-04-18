@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q7</title>
+</head>
+
+<body>
+    <script>
+        var name = "kiran";
+
+        function printName() {
+            console.log(this.name);
+        }
+
+        printName();  // kiran
+
+        const obj = {
+            name : "Vishnu",
+            getName(func){
+                func();
+            }
+        };
+
+        obj.getName(printName); //kiran
+        
+        // printName() is called using regular function invocation inside getName(). 
+        // "this" value during a regular function invocation points to the global scope, 
+        // since name value in global scope is "kiran", printName method prints "kiran"
+
+
+        </script>
+</body>
+
+</html>

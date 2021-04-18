@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q6</title>
+</head>
+
+<body>
+    <script>
+        const object = {
+            name: 'kiran',
+
+            greet() {
+                return `Hello, Mr.${this.name}`; 
+            },
+
+            wish: () => {
+                return `Good day, Mr.${this.name}`;
+            }
+        };
+
+        console.log(object.greet());    // Hello, Mr.kiran
+        console.log(object.wish());     // Good day, Mr.
+
+        // Any reference to arguments, super, this, or new.target within an ArrowFunction 
+        // must resolve to a binding in a lexically enclosing environment. 
+        // Typically this will be the Function Environment of an immediately enclosing function.
+        </script>
+</body>
+
+</html>

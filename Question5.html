@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q5</title>
+</head>
+
+<body>
+    <script>
+        function Name(fName, lName) {
+            this.fName = fName;
+            this.lName = lName;
+        }
+
+        let kiran = new Name('kiran', 'raj');
+
+        Name.getFullName = function () {
+            return `${this.fName} ${this.lName}`;
+        };
+
+        // console.log(kiran.getFullName());
+        // Uncaught TypeError: kiran.getFullName is not a function
+
+        Name.prototype.getFullName = function () {
+            return `${this.fName} ${this.lName}`;
+        };
+
+        console.log(kiran.getFullName()); //kiran raj
+    </script>
+</body>
+
+</html>

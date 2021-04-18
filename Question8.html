@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript:QnA - Q8</title>
+</head>
+
+<body>
+    <script>
+
+        var length = 5;
+
+        function printLength() {
+            console.log(this.length); 
+        }
+
+        const obj = {
+            length: 10,
+            getName() {
+                arguments[0]();
+            }
+        };
+
+        obj.getName(printLength, 1,2,3,4,5); // 6
+
+        // arguments[0] is equal to printLength, so arguments[0]() will invoke the printLength
+        // method, since the method is invoked on argument object, "this" points to the arguments,
+        // this.length points to the argument length, so the answer is length of arguments, 6
+
+    </script>
+</body>
+
+</html>
